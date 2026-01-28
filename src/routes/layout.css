@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+html {
+	background-color: rgb(0, 0, 0);
+	color: rgb(178, 178, 178);
+
+	font-family: 'Manifest59';
+}
+
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Manifest59';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/Manifest59.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
