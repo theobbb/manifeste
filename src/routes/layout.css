@@ -2,9 +2,12 @@
 
 html {
 	background-color: rgb(0, 0, 0);
-	color: rgb(178, 178, 178);
+	color: rgb(226, 226, 226);
 
-	font-family: 'Manifest59';
+	/* font-family: 'Manifest59'; */
+	font-family: 'Instrument Serif';
+
+	cursor: default;
 }
 
 @font-face {
@@ -13,4 +16,11 @@ html {
 	font-style: normal;
 	font-weight: 400;
 	src: url('/fonts/Manifest59.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Instrument Serif';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/instrument-serif-v5-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

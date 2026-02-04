@@ -1,28 +1,37 @@
 <script lang="ts">
-	import { create_canvas } from './canvas';
+	import Letter from './letter.svelte';
 
-	import Chars from './chars.svelte';
+	const lines = [
+		'Le web artisanal: Un manifeste',
+		'',
+		'1. Le contenu avant le spectacle',
+		'2. Performance & accessibilité = bon design',
+		'3. Pas de smooth scrolling et cursor effects',
+		'4. Zéro dépendance externe',
+		'5. Fuck l’AI'
+	];
 
-	function init(element: HTMLCanvasElement) {
-		const instance = create_canvas(element);
-		// return () => {
-		//     instance.destroy()
-		// }
-	}
+	let mounted = $state(false);
+	$effect(() => {
+		mounted = true;
+	});
 </script>
 
-<div class="mx-12 my-6 text-5xl">
-	<div class="ml-24 border-0 -indent-24 outline-0" contenteditable="true">
-		<div class="mb-12 underline decoration-wavy">Manifeste</div>
-		<div>
-			1. Ne pas laisser les craintes<br /> du long terme affecter son <br />bonheur à court terme.
+{#if mounted}
+	<div class="mx-8 my-6">
+		<div class="whitespace-pre- border-0 outline-0">
+			<div>
+				{#each lines as line, line_i}
+					<div class="flex flex-wrap items-center">
+						{#each line.split('') as letter, letter_i}
+							<Letter {letter} />
+						{/each}
+					</div>
+					{#if line == ''}
+						<div class="mt-16"></div>
+					{/if}
+				{/each}
+			</div>
 		</div>
-		<div>2. Rêver</div>
-		<div>3. Mais pas trop. <br /> être pragmatique</div>
-		<div>4. Penser à l'argent.</div>
-		<div>5. Mais pas trop.<br /> Juste assez pour se botter le cul.</div>
 	</div>
-</div>
-<!-- <Chars /> -->
-<!-- <div class="text-8xl">Fuck React</div> -->
-<!-- <canvas class="mx-auto my-12 h-200 w-200 border" use:init></canvas> -->
+{/if}
